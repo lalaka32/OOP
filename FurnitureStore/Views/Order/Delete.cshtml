@@ -1,0 +1,20 @@
+﻿@model FurnitureStore.Context.Models.Order
+
+@{
+	ViewBag.Title = "Удаление";
+}
+
+<h4>Удалить?</h4>
+<div>
+
+	@Html.DisplayFor(model => model.Id)
+	@using (Html.BeginForm())
+	{
+		@Html.AntiForgeryToken()
+
+		<div class="form-actions no-color">
+			<input type="submit" value="Да" class="btn btn-default" /> |
+			@Html.ActionLink("Нет", "GetOrders")
+		</div>
+	}
+</div>
